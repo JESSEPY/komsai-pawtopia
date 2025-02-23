@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "ArponaSans";
+  src: url("/fonts/fonnts.com-ArponaSans_Black.otf") format("opentype");
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "ArponaSans";
+  src: url("/fonts/Fontspring-DEMO-arponasans-medium.otf") format("opentype");
+  font-weight: 500; /* Adjust this value as needed */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ArponaSans";
+  src: url("/fonts/Fontspring-DEMO-arponasans-light.otf") format("opentype");
+  font-weight: 400; /* Adjust this value as needed */
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+/* Make the arrows darker */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 30px !important; /* Keep them slightly smaller */
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6) !important; /* Dark gray for better contrast */
+}
+
+/* Hover Effect: Slightly Darker */
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: rgba(0, 0, 0, 0.9) !important; /* Even darker on hover */
+}
+
+.small-alert {
+  @apply p-1 text-xs rounded-2xl mt-6; /* Smaller padding and text size */
+}
+
+/* ✅ Works in Chrome, Edge, Safari (WebKit-based browsers) */
+::-webkit-scrollbar {
+  height: 6px; /* Thin horizontal scrollbar */
+  width: 6px; /* Thin vertical scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light grey background */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Dark grey scroll thumb */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker on hover */
+}
+
+/* ✅ Works in Firefox */
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
