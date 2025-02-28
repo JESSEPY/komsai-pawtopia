@@ -5,6 +5,7 @@ import MobileNav from "../components/HomeHeader/MobileNav";
 import Feed from "../components/Feed/Feed";
 import ShelterProfile from "../components/Profile/ShelterProfile";
 import { Outlet } from "react-router-dom";
+import Chatbot from "../components/PetCareChatBot/ChatBot";
 
 const HomePage = () => {
   return (
@@ -26,6 +27,7 @@ const HomePage = () => {
           <MobileNav />
         </div>
         {/* Feed and Profile routing section */}
+        <Chatbot />
         <Outlet />
       </div>
     </>
