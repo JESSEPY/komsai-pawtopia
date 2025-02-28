@@ -56,6 +56,14 @@ import ShelterProcess from "./pages/ShelterProcessPage";
 
 import ProtectedRoute from "./ProtectedRoute";
 
+//Store routes
+import Store from "./components/Store/Store";
+import StoreOverview from "./components/Store/StoreContent/Overview/Overview";
+import Clothes from "./components/Store/StoreContent/Clothes/Clothes";
+import PetFood from "./components/Store/StoreContent/PetFood/PetFood";
+import Toys from "./components/Store/StoreContent/Toys/Toys";
+import Accessories from "./components/Store/StoreContent/Accessories/Accessories";
+
 import {
   Route,
   createBrowserRouter,
@@ -141,6 +149,17 @@ const router = createBrowserRouter(
           <Route path="comment" element={<Comment />} />
           <Route path="like" element={<Like />} />
         </Route>
+
+        <Route path="store" element={<Store />}>
+          <Route index element={<Navigate to="overview" />} />
+          <Route path="overview" element={<StoreOverview />} />
+          <Route path="pet-food" element={<PetFood />} />
+          <Route path="accessories" element={<Accessories />} />
+          <Route path="toys" element={<Toys />} />
+          <Route path="clothes" element={<Clothes />} />
+    
+        </Route>
+
         <Route path="find" element={<Find />} />
         <Route path="listAPet" element={<List />} />
         <Route path="lostAPet" element={<PostLostAPet />} />

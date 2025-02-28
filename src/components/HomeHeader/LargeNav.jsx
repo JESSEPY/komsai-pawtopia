@@ -9,6 +9,7 @@ import ExploreLogo from "../../assets/icons/sidebar/exploreAlt.svg";
 import PetCareLogo from "../../assets/icons/sidebar/petCareAlt.svg";
 import FindLogo from "../../assets/icons/sidebar/findAlt.svg";
 import MessagesLogo from "../../assets/icons/sidebar/messageAlt.svg";
+import storeLogo from "../../assets/icons/sidebar/storeLogo.svg";
 import NotificationsLogo from "../../assets/icons/sidebar/notificationAlt.svg";
 import listAPet from "../../assets/icons/sidebar/listIcon.svg";
 import { useUserProfile } from "../../hooks/userProfile";
@@ -19,6 +20,7 @@ import ExploreHover from "../../assets/icons/sidebar/exploreHover.svg";
 import PetCareHover from "../../assets/icons/sidebar/petCareHover.svg";
 import FindHover from "../../assets/icons/sidebar/findHover.svg";
 import MessagesHover from "../../assets/icons/sidebar/messageHover.svg";
+import storeHover from "../../assets/icons/sidebar/storeHover.svg";
 import NotificationsHover from "../../assets/icons/sidebar/notificationHover.svg";
 
 // ✅ Import Heroicons v2 for Logout Icon
@@ -65,6 +67,13 @@ const LargeNav = () => {
       link: "messages",
       icon: MessagesLogo,
       iconHover: MessagesHover,
+      size: "w-8 h-8",
+    },
+    {
+      name: "Store",
+      link: "Store",
+      icon: storeLogo,
+      iconHover: storeHover,
       size: "w-8 h-8",
     },
     // {
