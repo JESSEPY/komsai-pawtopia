@@ -96,7 +96,6 @@ const LargeNav = () => {
           Pawtopia
         </p>
       </NavLink>
-
       <div className="w-full h-auto flex items-start flex-col gap-y-1 xl:pr-6 flex-grow">
         {sidebarItems.map((item) => {
           const [isHovered, setIsHovered] = useState(false);
@@ -134,31 +133,28 @@ const LargeNav = () => {
           );
         })}
       </div>
-
-      {/* Hide "List a Pet" button if the user is an Adopter */}
-      {!isLoading && userData?.role !== "Adopter" && (
+      {/* Hide "List a Pet" button if the user is an Adopter or not verified */}
+      {!isLoading && userData?.role !== "Adopter" && userData?.isVerified && (
         <NavLink
           to="listAPet"
           className="mt-auto mb-4 xl:max-w-56 xl:mx-0 mx-auto transition transform hover:-translate-y-2 
-          duration-300 font-arpona font-black text-primary h-12 rounded-2xl border-2 border-primary 
-          flex items-center justify-center gap-4 shadow-lg shadow-primary/30 px-6"
+    duration-300 font-arpona font-black text-primary h-12 rounded-2xl border-2 border-primary 
+    flex items-center justify-center gap-4 shadow-lg shadow-primary/30 px-6"
         >
           <img src={listAPet} alt="List a Pet" className="h-6 w-6" />
           <span className="hidden xl:block">List a Pet</span>
         </NavLink>
       )}
 
-      {/* Render "Post Lost Pet" button ONLY if the user is an Adopter */}
-      {!isLoading && userData?.role === "Adopter" && (
+      {!isLoading && userData?.role === "Adopter" && userData?.isVerified && (
         <div className="mt-auto mb-4 xl:max-w-56 xl:mx-0 mx-auto">
           <PostLostPetButton />
         </div>
       )}
-
-      <p>Temporary</p>
-
+      {/* 
+      <p>Temporary</p> */}
       {/* ✅ Logout Button (Using `logoutUser` from authService) */}
-      <button
+      {/* <button
         onClick={logoutUser}
         className="mt-2 mb-6 xl:max-w-56 xl:mx-0 mx-auto flex items-center gap-4 justify-center px-6 py-3 border 
         border-red-500 rounded-2xl text-red-700 font-semibold shadow-lg transition hover:bg-red-100 
@@ -168,7 +164,7 @@ const LargeNav = () => {
         <span className="xl:block lg:hidden md:hidden sm:hidden hidden">
           Logout
         </span>
-      </button>
+      </button> */}
     </div>
   );
 };
