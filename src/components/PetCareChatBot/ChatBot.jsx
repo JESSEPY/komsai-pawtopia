@@ -9,28 +9,45 @@ import {
 } from "@heroicons/react/24/solid";
 
 function Chatbot() {
-  const [chatHistory, setChatHistory] = useState([
-    { hideInChat: true, role: "model", text: companyInfo },
-  ]);
+  // Initialize chatHistory from localStorage, if available.
+  const [chatHistory, setChatHistory] = useState(() => {
+    const savedHistory = localStorage.getItem("chatHistory");
+    return savedHistory
+      ? JSON.parse(savedHistory)
+      : [{ hideInChat: true, role: "model", text: companyInfo }];
+  });
   const [showChatbot, setShowChatbot] = useState(false);
   const chatBodyRef = useRef();
 
-  // Function to update chat history
+  // Persist chatHistory changes to localStorage
+  useEffect(() => {
+    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+  }, [chatHistory]);
+
+  // Function to update chat history with a new bot response
   const updateHistory = (text, isError = false) => {
-    setChatHistory((prev) => [
-      ...prev.filter((msg) => msg.text !== "Purring..."),
-      { role: "model", text, isError },
-    ]);
+    setChatHistory((prev) => {
+      // Optionally, filter out temporary messages like "Purring..."
+      const newHistory = [
+        ...prev.filter((msg) => msg.text !== "Purring..."),
+        { role: "model", text, isError },
+      ];
+      return newHistory;
+    });
   };
 
-  // Function to handle bot response
+  // Function to generate a bot response using the full chat history
   const generateBotResponse = async (history) => {
-    history = history.map(({ role, text }) => ({ role, parts: [{ text }] }));
+    // Map each message to the expected format for the API request.
+    const formattedHistory = history.map(({ role, text }) => ({
+      role,
+      parts: [{ text }],
+    }));
 
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ contents: history }),
+      body: JSON.stringify({ contents: formattedHistory }),
     };
 
     try {
@@ -69,7 +86,7 @@ function Chatbot() {
     }
   };
 
-  // Auto-scroll effect when new messages appear
+  // Auto-scroll to the bottom of the chat when new messages are added
   useEffect(() => {
     if (chatBodyRef.current) {
       chatBodyRef.current.scrollTo({
