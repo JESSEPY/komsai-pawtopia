@@ -86,6 +86,8 @@ const FeedItem = ({ post, openAdoptModal }) => {
   const isVerified = userData?.isVerified || false;
   const postType = post.postType || "ADOPT";
 
+  const title = post.title || "Title not available";
+
   const [inputText, setInputText] = useState("");
 
   const { comments } = useComments(post.id); // ✅ Fetch comments
@@ -151,15 +153,14 @@ const FeedItem = ({ post, openAdoptModal }) => {
             {isVerified && <img src={Verified} alt="Verified" />}
             <span className="inline-block w-1 h-1 rounded-full bg-gray-500"></span>
             <p className="text-customBlue/70 text-sm font-medium">{time}</p>
-            <NavLink
+            {/* <NavLink
               to="/"
               className="text-customBlue font-arpona font-medium text-sm"
             >
               Donate
-            </NavLink>
+            </NavLink> */}
           </div>
         </div>
-        <Ellipse />
       </div>
       {/* Tags */}
       <div className="flex flex-wrap gap-2 mt-2">
@@ -217,6 +218,7 @@ const FeedItem = ({ post, openAdoptModal }) => {
         username={username}
         isVerified={isVerified}
         caption={caption}
+        title={title}
       />
       {/* Comment Count */}
       <div className="w-full h-auto flex items-center gap-x-1 my-2">

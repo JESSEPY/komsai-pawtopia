@@ -759,6 +759,12 @@ const QuestionnaireForm = ({
         )}
         <p className="text-gray-700 text-sm mt-6">
           Upload a Valid ID<span className="text-red-600">*</span>
+          <br />
+          <span className="text-xs text-gray-500">
+            For your privacy, please hide or blur sensitive details such as your
+            ID number, address, barcode, and signature. Only your name and photo
+            should remain visible for verification.
+          </span>
         </p>
         <FileUpload onFilesChange={handleValidIdChange} />
         {errors.validId && (

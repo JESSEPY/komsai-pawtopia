@@ -372,6 +372,7 @@ const PersonalForm = ({ initialData = {}, onChange, onNext }) => {
               type="text"
               name="occupation"
               value={occupation}
+              placeholder="Type N/A if unemployed"
               onChange={(e) => setOccupation(e.target.value)}
               className="w-full px-4 py-2 border bg-formBg border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
             />
@@ -379,17 +380,22 @@ const PersonalForm = ({ initialData = {}, onChange, onNext }) => {
               <p className="text-red-500 text-xs">{errors.occupation}</p>
             )}
           </div>
+
           <div>
-            <label className="sr-only"></label>
+            <label className="block text-sm font-medium text-gray-700">
+              Business Name<span className="text-red-600">*</span>
+            </label>
             <input
               type="text"
-              name="businessName"
+              name="occupation"
               value={businessName}
+              placeholder="Type N/A if not applicable"
               onChange={(e) => setBusinessName(e.target.value)}
-              placeholder={isEmployed ? "Type N/A if unemployed" : "N/A"}
-              className="w-full px-4 py-2 border bg-formBg border-gray-400 rounded-md shadow-sm mt-5 focus:outline-none focus:ring-2 focus:ring-primary"
-              disabled={!isEmployed}
+              className="w-full px-4 py-2 border bg-formBg border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
             />
+            {errors.businessName && (
+              <p className="text-red-500 text-xs">{errors.businessName}</p>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">

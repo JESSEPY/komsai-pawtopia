@@ -7,34 +7,41 @@ import {
   subscribeAdoptedPetsByUid,
 } from "../services/getAdoptedPetsService";
 
+import { auth } from "../../firebase";
+
 /**
- * Custom Hook: Fetch adopted pets using SWR and subscribe for realtime updates for the logged-in user.
+ * Custom Hook: Fetch adopted pets for the currently logged-in user.
  * @returns {Object} { data, error, isLoading }
  */
 export const useAdoptedPets = () => {
+  const user = auth.currentUser; // Get the authenticated user
+
   const { data, error, isLoading, mutate } = useSWR(
-    "adoptedPets",
-    fetchAdoptedPetsForAdopter,
+    user ? `adoptedPets-${user.uid}` : null, // Only fetch if user is logged in
+    () => fetchAdoptedPetsByUid(user.uid),
     {
-      refreshInterval: 60000, // fallback refresh every 60 seconds
+      refreshInterval: 60000,
       revalidateOnFocus: true,
     }
   );
 
   useEffect(() => {
-    const unsubscribe = subscribeAdoptedPetsForAdopter(
+    if (!user) return; // If no user, don't subscribe
+
+    const unsubscribe = subscribeAdoptedPetsByUid(
+      user.uid,
       (pets) => {
-        // Update the SWR cache with realtime data
         mutate(pets, false);
       },
       (err) => {
         console.error("Realtime subscription error:", err);
       }
     );
+
     return () => {
       unsubscribe();
     };
-  }, [mutate]);
+  }, [user, mutate]);
 
   return {
     data,

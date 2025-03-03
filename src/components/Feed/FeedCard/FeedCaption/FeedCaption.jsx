@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Verified from "../../../../assets/icons/verifiedPaw.svg";
 
-const FeedCaption = ({ username, isVerified, caption }) => {
+const FeedCaption = ({ username, isVerified, caption, title }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const MAX_LENGTH = 200;
 
@@ -54,7 +54,7 @@ const FeedCaption = ({ username, isVerified, caption }) => {
             className="inline-block w-4 h-4 ml-1"
           />
         )}{" "}
-        {renderCaption()}
+        {title && <p className="font-semibold">{title}</p>} {renderCaption()}
       </p>
     </div>
   );

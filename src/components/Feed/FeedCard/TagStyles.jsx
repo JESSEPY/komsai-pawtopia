@@ -24,7 +24,7 @@ const tagStyles = {
     bg: "bg-rose-100",
     border: "border-rose-500",
     textColor: "text-rose-500",
-    text: "#Lost",
+    text: "#LOST",
   },
 };
 
