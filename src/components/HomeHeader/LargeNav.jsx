@@ -48,13 +48,13 @@ const LargeNav = () => {
       iconHover: ExploreHover,
       size: "w-8 h-8",
     },
-    {
-      name: "PetCare",
-      link: "petcare",
-      icon: PetCareLogo,
-      iconHover: PetCareHover,
-      size: "w-8 h-8",
-    },
+    // {
+    //   name: "PetCare",
+    //   link: "petcare",
+    //   icon: PetCareLogo,
+    //   iconHover: PetCareHover,
+    //   size: "w-8 h-8",
+    // },
     {
       name: "Find",
       link: "find",
@@ -62,13 +62,13 @@ const LargeNav = () => {
       iconHover: FindHover,
       size: "w-8 h-8",
     },
-    {
-      name: "Messages",
-      link: "messages",
-      icon: MessagesLogo,
-      iconHover: MessagesHover,
-      size: "w-8 h-8",
-    },
+    // {
+    //   name: "Messages",
+    //   link: "messages",
+    //   icon: MessagesLogo,
+    //   iconHover: MessagesHover,
+    //   size: "w-8 h-8",
+    // },
     {
       name: "Store",
       link: "Store",
