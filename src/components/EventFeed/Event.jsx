@@ -31,11 +31,11 @@ const Event = () => {
         </div>
       </div>
       {/* Recommended Shelters Section (Fixed) */}
-      {/* <div className="hidden lg:block">
-        <div className="fixed top-4 right-8 w-[300px]">
+      <div className="hidden lg:block">
+        <div className="fixed right-8 w-[300px]">
           <SuggestedShelters />
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

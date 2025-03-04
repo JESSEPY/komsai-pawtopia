@@ -213,10 +213,10 @@ const SignUpCard = ({ selectedRole }) => {
               </button>
 
               {/* Google  */}
-              <button className="transition transform hover:translate-y-2 duration-300 flex text-sm flex-grow items-center justify-center gap-2 border h-10 border-gray-400 py-2 px-4 rounded-lg">
+              {/* <button className="transition transform hover:translate-y-2 duration-300 flex text-sm flex-grow items-center justify-center gap-2 border h-10 border-gray-400 py-2 px-4 rounded-lg">
                 <img src={google} alt="Google Icon" />
                 Continue with Google
-              </button>
+              </button> */}
             </div>
           </>
         )}

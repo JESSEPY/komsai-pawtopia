@@ -31,8 +31,10 @@ const Feed = () => {
         </div>
       </div>
       {/* Recommended shelters section */}
-      <div className="w-[25%] h-auto lg:block md:hidden sm:hidden hidden mr-8">
-        <SuggestedShelters />
+      <div className="hidden lg:block">
+        <div className="fixed right-8 w-[25%]">
+          <SuggestedShelters />
+        </div>
       </div>
     </>
   );

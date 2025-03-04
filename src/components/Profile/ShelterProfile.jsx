@@ -110,10 +110,6 @@ const ShelterProfile = () => {
             closeModal={() => setIsModalOpen(false)}
             userProfile={userProfile}
           />
-
-          <button className="px-8 py-2 bg-gray-200 rounded-lg text-sm w-36 transition hover:bg-gray-300 duration-300">
-            Settings
-          </button>
         </div>
 
         {/* Profile Navigation */}
