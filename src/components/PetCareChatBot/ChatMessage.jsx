@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../../assets/pawtopia_logo.svg";
+import ReactMarkdown from "react-markdown";
 
 const ChatMessage = ({ chat }) => {
   return (
@@ -9,7 +10,6 @@ const ChatMessage = ({ chat }) => {
           chat.role === "model" ? "" : "justify-end"
         }`}
       >
-        {/* Display bot profile image for bot messages */}
         {chat.role === "model" && (
           <img
             src={Logo}
@@ -17,17 +17,24 @@ const ChatMessage = ({ chat }) => {
             className="h-8 w-8 rounded-full bg-altTagColor p-1"
           />
         )}
-
-        {/* Message bubble with original colors */}
-        <p
+        <div
           className={`p-3 text-sm max-w-xs whitespace-pre-line leading-relaxed ${
             chat.role === "model"
               ? "bg-gray-100 text-gray-900 rounded-bl-lg rounded-tr-lg rounded-br-lg"
               : "bg-altTagColor text-white rounded-br-lg rounded-tl-lg rounded-tr-lg"
           }`}
         >
-          {chat.text}
-        </p>
+          <ReactMarkdown
+            components={{
+              // Customize link style to be cyan and add hover underline
+              a: ({ node, ...props }) => (
+                <a {...props} className="text-cyan-500 hover:underline" />
+              ),
+            }}
+          >
+            {chat.text}
+          </ReactMarkdown>
+        </div>
       </div>
     )
   );

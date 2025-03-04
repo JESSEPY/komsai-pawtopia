@@ -22,6 +22,8 @@ import FindHover from "../../assets/icons/sidebar/findHover.svg";
 import MessagesHover from "../../assets/icons/sidebar/messageHover.svg";
 import storeHover from "../../assets/icons/sidebar/storeHover.svg";
 import NotificationsHover from "../../assets/icons/sidebar/notificationHover.svg";
+import Event from "../../assets/icons/sidebar/event.svg";
+import EventHover from "../../assets/icons/sidebar/eventHover.svg";
 
 // ✅ Import Heroicons v2 for Logout Icon
 import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
@@ -60,6 +62,13 @@ const LargeNav = () => {
       link: "find",
       icon: FindLogo,
       iconHover: FindHover,
+      size: "w-8 h-8",
+    },
+    {
+      name: "Event",
+      link: "event",
+      icon: Event,
+      iconHover: EventHover,
       size: "w-8 h-8",
     },
     // {

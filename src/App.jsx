@@ -17,6 +17,7 @@ import Find from "./components/Find/Find";
 import List from "./components/ListAPet/List";
 import Explore from "./components/Explore/Explore";
 import PostLostAPet from "./components/Find/PostLostPet";
+import EventFeed from "./components/EventFeed/Event";
 
 //Shelter Profile Routes
 import ShelterProfile from "./components/Profile/ShelterProfile";
@@ -157,13 +158,13 @@ const router = createBrowserRouter(
           <Route path="accessories" element={<Accessories />} />
           <Route path="toys" element={<Toys />} />
           <Route path="clothes" element={<Clothes />} />
-    
         </Route>
 
         <Route path="find" element={<Find />} />
         <Route path="listAPet" element={<List />} />
         <Route path="lostAPet" element={<PostLostAPet />} />
         <Route path="explore" element={<Explore />} />
+        <Route path="event" element={<EventFeed />} />
         <Route path="full-adopter" element={<FullAdopterPage />} />
       </Route>
     </Route>

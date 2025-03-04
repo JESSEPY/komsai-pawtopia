@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <>
       <div
-        className="w-full h-auto flex items-start justify-between lg:gap-x-12 md:gap-x-10
+        className="w-full h-auto flex items-start justify-start lg:gap-x-12 md:gap-x-10
         sm:gap-x-8 gap-x-4 relative"
       >
         {/* Sidebar Section */}
