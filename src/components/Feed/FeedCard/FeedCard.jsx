@@ -168,6 +168,7 @@ const FeedItem = ({ post, openAdoptModal }) => {
           <FeedTag key={index} tag={tag} />
         ))}
       </div>
+
       {/* Feed Image Slider */}
       <FeedMediaSlider postMedia={postImgs} onDoubleTap={toggleLike} />
 

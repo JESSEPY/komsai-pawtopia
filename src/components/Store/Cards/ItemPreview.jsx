@@ -24,7 +24,7 @@ function ItemPreview({ item, onClose }) {
         className="w-full h-64 object-cover rounded-lg"
       />
       <h2 className="text-xl font-bold mt-4">
-        {item.name} - ${item.price}
+        {item.name} - ₱{item.price}
       </h2>
       <p className="text-gray-700 mt-2">{item.description}</p>
 
