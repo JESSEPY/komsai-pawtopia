@@ -108,6 +108,7 @@ Legit Links & Recommendations:
   
   • **Pet Friendly’s PH** – [Visit Pet Friendly's PH](https://petfriendlys.ph/)  
     Highlights local brands offering quality, eco-friendly pet accessories and essentials.
+    
   
 3. Customized Pet Care Assistance
 The bot will ask for pet type (dog, cat, rabbit, etc.) and breed to provide tailored care tips.

@@ -82,9 +82,9 @@ const ShelterProfile = () => {
               </div>
 
               {/* Donate Button */}
-              <div className="flex-grow flex justify-end">
+              {/* <div className="flex-grow flex justify-end">
                 <DonateButton />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

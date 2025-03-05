@@ -153,12 +153,12 @@ const FeedItem = ({ post, openAdoptModal }) => {
             {isVerified && <img src={Verified} alt="Verified" />}
             <span className="inline-block w-1 h-1 rounded-full bg-gray-500"></span>
             <p className="text-customBlue/70 text-sm font-medium">{time}</p>
-            {/* <NavLink
+            <NavLink
               to="/"
               className="text-customBlue font-arpona font-medium text-sm"
             >
               Donate
-            </NavLink> */}
+            </NavLink>
           </div>
         </div>
       </div>
